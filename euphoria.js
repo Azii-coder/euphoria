@@ -2,6 +2,11 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const config = require(`./config.json`)
 const prefix = config.prefix
+require ('dotenv/config')
+const http = require('http')
+const port = process.env.PORT || 3000;
+const token = precess.env.TOKEN;
+http.createServer().listen(port);
 const client = new Discord.Client();
 const bot = new Discord.Client({disableMentions:"everyone"});
 bot.snipes = new Discord.Collection();
@@ -20,6 +25,5 @@ bot.on('message', async message =>{
     require('./events/guild/message')(bot, message)
 })
 
-const token = require(`./token.json`)
 bot.login(token.Token)
 
