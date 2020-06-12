@@ -5,9 +5,9 @@ const prefix = config.prefix
 require ('dotenv/config')
 const http = require('http')
 const port = process.env.PORT || 3000;
-const token = precess.env.TOKEN;
 http.createServer().listen(port);
 const client = new Discord.Client();
+const token = process.env.TOKEN;
 const bot = new Discord.Client({disableMentions:"everyone"});
 bot.snipes = new Discord.Collection();
 bot.prefix = prefix;
