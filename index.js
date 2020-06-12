@@ -25,5 +25,9 @@ bot.on('message', async message =>{
     require('./events/guild/message')(bot, message)
 })
 
+bot.on('error', err => {
+    console.log(err);
+})
+
 bot.login(token.Token)
 
